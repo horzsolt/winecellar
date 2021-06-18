@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Borospince</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style type="text/css">
+
+        table{
+            width:100%;
+            table-layout: fixed;
+            overflow-wrap: break-word;
+        }
+
+        th {
+            height: 70px;
+        }    
+    </style>
+  </head>
+  <body>
+    <table>
+        <tr>
+            <th style="font-size: 13px; padding: 5px 9px 6px 9px; line-height: 1em;" align="center" bgcolor="#EAEAEA" width="300">Borvidék</th>
+            <th style="font-size: 13px; padding: 5px 9px 6px 9px; line-height: 1em;" align="center" bgcolor="#EAEAEA" width="600">Termelő</th>
+            <th style="font-size: 13px; padding: 5px 9px 6px 9px; line-height: 1em;" align="center" bgcolor="#EAEAEA" width="800">Név</th>
+            <th style="font-size: 13px; padding: 5px 9px 6px 9px; line-height: 1em;" align="center" bgcolor="#EAEAEA" width="100">Évjárat</th>
+            <th style="font-size: 13px; padding: 5px 9px 6px 9px; line-height: 1em;" align="center" bgcolor="#EAEAEA" width="80">Palackszám</th>
+            <th style="font-size: 13px; padding: 5px 9px 6px 9px; line-height: 1em;" align="center" bgcolor="#EAEAEA" width="300">Egyéb</th>
+        </tr>
+        {% for row in bottles %}
+        <tr>
+            <td>{{ row["area"] }}</td>
+            <td>{{ row["producer"] }}</td>
+            <td>{{ row["name"] }}</td>
+            <td>{{ row["year"] }}</td>
+            <td>{{ row["pcs"] }}</td>
+            <td>{{ row["other"] }}</td>
+        </tr>
+        {% endfor %}           
+    </table>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
